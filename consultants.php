@@ -72,8 +72,8 @@ if (isset($_POST['save']))
                                                         </button>
                                                         <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton" style="">
                                                             <a class="dropdown-item" href="clients/view.php">View</a>
-                                                            <a class="dropdown-item" data-toggle="modal" data-target="#editClient<?php echo $row['id']?>">Edit</a>
-                                                            <a class="dropdown-item" data-toggle="modal" data-target="#deleteClient<?php echo $row['id']?>">Delete</a>
+                                                            <a class="dropdown-item" data-toggle="modal" data-target="#editClient<?php echo $cons['id']?>">Edit</a>
+                                                            <a class="dropdown-item" data-toggle="modal" data-target="#deleteClient<?php echo $cons['id']?>">Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>
