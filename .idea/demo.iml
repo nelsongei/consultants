@@ -4,6 +4,6 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="startbootstrap-sb-admin-2-gh-pages" />
+    <orderEntry type="module" module-name="FlexStart" />
   </component>
 </module>
