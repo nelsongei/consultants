@@ -17,12 +17,6 @@
             <span>Dashboard</span></a>
     </li>
     <li class="nav-item">
-        <a href="clients.php" class="nav-link">
-            <i class="fa fa-users"></i>
-            <span>Clients</span>
-        </a>
-    </li>
-    <li class="nav-item">
         <a href="profile.php" class="nav-link">
             <i class="fa fa-users-cog"></i>
             <span>Profile</span>
@@ -32,6 +26,11 @@
         <a class="nav-link" href="services.php">
             <i class="fas fa-fw fa-cog"></i>
             <span>Services</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="reports.php">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Reports</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

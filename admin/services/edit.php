@@ -11,8 +11,8 @@ if (isset($_POST['update']))
     $qry = mysqli_query($con,"UPDATE services SET name='".$name."',price='".$price."' WHERE id = '".$id."'");
     if ($qry)
     {
-        header('Location: http://127.0.0.1/demo/services.php');
         echo "<script>alert('Updated Successfully')</script>";
+        header('Location: http://127.0.0.1/demo/admin/services.php');
     }
     else{
         echo  $con->error;

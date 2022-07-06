@@ -2,7 +2,9 @@
 include "header.php";
 ?>
 <div id="wrapper">
-    <?php include "sidebar.php"; ?>
+    <?php
+    include "sidebar.php";
+    ?>
     <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
             <?php include "topbar.php"; ?>
@@ -13,97 +15,79 @@ include "header.php";
                     </div>
                 </div>
                 <div class="row">
-                    <?php
-                    $con = mysqli_connect('localhost','root','','demo');
-                    $qry=mysqli_query($con,"SELECT * FROM Consultants where id='".$_SESSION['id']."'");
-                    while($row = mysqli_fetch_array($qry))
-                    {
-                    ?>
                     <div class="col-sm-3">
-                        <div class="card border-left-warning mb-3">
+                        <div class="card border-left-primary">
                             <div class="card-body">
                                 <div class="text-center">
                                     <img class="img-profile rounded-circle"
                                          src="../img/undraw_profile.svg" height="100" width="100">
-                                    <h3><?php echo $_SESSION['consultantName'] ?></h3>
-                                    <h6><?php echo $_SESSION['consultant'] ?></h6>
+                                    <h3><?php echo $_SESSION['clientName'] ?></h3>
+                                    <p><?php echo $_SESSION['clientEmail'] ?></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="card border-left-success">
+                        <div class="card border-left-success mt-3">
                             <div class="card-body">
                                 <p class="text-muted">
-                                    <i class="fa fa-user" style="color: green"></i>
-                                    Name: <?php echo $_SESSION['consultantName'] ?>
+                                    <i class="fa fa-envelope" style="color: #0a53be"></i>
+                                    <?php echo $_SESSION['clientEmail'] ?>
                                 </p>
                                 <p class="text-muted">
-                                    <i class="fa fa-envelope" style="color: greenyellow"></i>
-                                    Email: <?php echo $_SESSION['consultant'] ?>
+                                    <i class="fa fa-phone" style="color: #5984c2"></i>
+                                    <?php echo $_SESSION['clientPhone'] ?>
                                 </p>
                                 <p class="text-muted">
-                                    <i class="fa fa-phone" style="color: greenyellow"></i>
-                                    Phone Number: <?php echo $row['phone'] ?>
-                                </p>
-                                <p class="text-muted">
-                                    <i class="fa fa-male" style="color: greenyellow"></i>
-                                    Gender: <?php echo $_SESSION['gender'] ?>
-                                </p>
-                                <p class="text-muted">
-                                    <i class="fa fa-location-arrow" style="color: greenyellow"></i>
-                                    Address: <?php echo $_SESSION['address'] ?>
+                                    <i class="fa fa-male" style="color: #7d92a9"></i>
+                                    <?php echo $_SESSION['clientGender'] ?>
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-9">
-                        <div class="card border-left-danger">
-                            <form action="profile/edit.php" method="post">
+                        <div class="card">
+                            <form action="editClient.php" method="post">
                                 <div class="card-body">
                                     <div class="row">
-                                        <input type="hidden" name="id" value="<?php echo $_SESSION['id']?>">
+                                        <input type="hidden" name="id" value="<?php echo $_SESSION['clientId'] ?>">
                                         <div class="form-group col-sm-6">
                                             <label>Fullname</label>
                                             <input type="text" name="name"
-                                                   value="<?php echo $_SESSION['consultantName'] ?>"
+                                                   value="<?php echo $_SESSION['clientName'] ?>"
                                                    class="form-control" readonly>
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <label>Email</label>
-                                            <input type="text" name="email" value="<?php echo $_SESSION['consultant'] ?>"
+                                            <input type="text" name="email"
+                                                   value="<?php echo $_SESSION['clientEmail'] ?>"
                                                    class="form-control" readonly>
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <label>Phone</label>
-                                            <input type="text" name="phone" value="<?php echo $row['phone'] ?>"
-                                                   class="form-control">
-                                        </div>
-                                        <div class="form-group col-sm-6">
-                                            <label>Address</label>
-                                            <input type="text" name="address" value="<?php echo $_SESSION['address'] ?>"
+                                            <input type="text" name="phone"
+                                                   value="<?php echo $_SESSION['clientPhone'] ?>"
                                                    class="form-control">
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <label>Gender</label>
-                                            <input type="text" name="gender" value="<?php echo $_SESSION['gender'] ?>"
+                                            <input type="text" name="gender"
+                                                   value="<?php echo $_SESSION['clientGender'] ?>"
                                                    class="form-control" readonly>
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <label>Password</label>
-                                            <input type="password" name="password" class="form-control">
+                                            <input type="password" name="password"
+                                                   class="form-control">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="submit" name="update" class="btn btn-sm btn-info">
+                                    <button type="submit" class="btn btn-sm btn-primary" name="update">
                                         Update
                                     </button>
                                 </div>
                             </form>
                         </div>
                     </div>
-                        <?php
-                    }
-                    ?>
                 </div>
             </div>
         </div>
