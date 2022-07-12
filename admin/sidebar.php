@@ -35,25 +35,17 @@
             <span>Services</span></a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="reports.php">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Reports</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="users.php">
             <i class="fas fa-fw fa-user"></i>
             <span>Users</span></a>
     </li>
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-           aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Test</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" href="buttons.html">Buttons</a>
-                <a class="collapse-item" href="cards.html">Cards</a>
-            </div>
-        </div>
-    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

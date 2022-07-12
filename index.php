@@ -171,7 +171,6 @@
                             </div>
                         </div>
                     </div><!-- End testimonial item -->
-
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="stars">

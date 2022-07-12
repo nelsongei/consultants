@@ -26,21 +26,39 @@
                                         <th>Consultant Name</th>
                                         <th>Service Price</th>
                                         <th>Request</th>
+                                        <th>Status</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <?php
                                         $con  = mysqli_connect('localhost','root','','demo');
-                                        $qry = mysqli_query($con,"SELECT services.price,services.name,services.id,client_requests.description,client_requests.service_id FROM client_requests INNER JOIN services ON client_requests.service_id = services.id AND client_id='".$_SESSION['id']."'");
+                                        $qry = mysqli_query($con,"SELECT Consultants.firstname as Fname, Consultants.lastname as Lname,Consultants.id as Cid, services.name as Sname,services.id as Sid, clients.fullname as ClientName,clients.id as ClientId, client_requests.description as description, client_requests.STATUS as staus,client_requests.id as ID,services.price FROM Consultants, services,clients,client_requests WHERE services.id = client_requests.service_id AND clients.id ='".$_SESSION['clientId']."'");
                                         while($row=mysqli_fetch_array($qry))
                                         {
                                             ?>
                                             <tr>
-                                                <td><?php echo  $row['id']?></td>
-                                                <td><?php echo  $row['name']?></td>
-                                                <td><?php echo  $row['id']?></td>
+                                                <td><?php echo  $row['ID']?></td>
+                                                <td><?php echo  $row['Sname']?></td>
+                                                <td><?php echo  $row['Fname'].' '.$row['Lname']?></td>
+                                                <td><?php echo  $row['price']?></td>
                                                 <td><?php echo  $row['description']?></td>
-                                                <td></td>
+                                                <td>
+                                                    <?php
+                                                    if ($row['staus'] == 0) {
+                                                        ?>
+                                                        <button type="button" class="btn btn-block btn-warning">
+                                                            Pending
+                                                        </button>
+                                                        <?php
+                                                    } else {?>
+                                                        <button type="button" class="btn btn-block btn-success">
+                                                            Dealt With
+                                                        </button>
+                                                        <?php
+
+                                                    }
+                                                    ?>
+                                                </td>
                                             </tr>
                                             <?php
                                         }
